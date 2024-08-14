@@ -2,12 +2,16 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-image: url('IMG_3363.jpg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+    background-position: center; /* Centers the image */
     color: #333;
 }
 
 header {
-    background-color: #0096d6;
+    background-color: rgba(0, 150, 214, 0.9); /* Slight transparency for the header background */
     color: white;
     padding: 1em 0;
     display: flex;
@@ -63,8 +67,9 @@ header nav ul li #language-options button:hover {
 .title-section {
     text-align: center;
     padding: 20px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency for the title section background */
     margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .title-section h1 {
@@ -85,13 +90,54 @@ header nav ul li #language-options button:hover {
 }
 
 .grid-item {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9); /* Default background color */
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
+
+/* Assign different background colors to each grid item */
+.grid-item:nth-child(1) {
+    background-color: rgba(255, 204, 204, 0.9); /* Light Red */
+}
+
+.grid-item:nth-child(2) {
+    background-color: rgba(204, 255, 204, 0.9); /* Light Green */
+}
+
+.grid-item:nth-child(3) {
+    background-color: rgba(204, 204, 255, 0.9); /* Light Blue */
+}
+
+.grid-item:nth-child(4) {
+    background-color: rgba(255, 255, 204, 0.9); /* Light Yellow */
+}
+
+.grid-item:nth-child(5) {
+    background-color: rgba(255, 204, 255, 0.9); /* Light Pink */
+}
+
+.grid-item:nth-child(6) {
+    background-color: rgba(204, 255, 255, 0.9); /* Light Cyan */
+}
+
+.grid-item:nth-child(7) {
+    background-color: rgba(255, 229, 204, 0.9); /* Light Orange */
+}
+
+.grid-item:nth-child(8) {
+    background-color: rgba(229, 204, 255, 0.9); /* Light Purple */
+}
+
+.grid-item:nth-child(9) {
+    background-color: rgba(204, 255, 229, 0.9); /* Light Mint */
+}
+
+/* Add more colors for additional grid items if necessary */
+
+
 
 .grid-item h2 {
     font-size: 1.5em;
@@ -112,7 +158,7 @@ header nav ul li #language-options button:hover {
 }
 
 .grid-item button:hover {
-    background-color: #007bb5;
+    background-color: #0dc735c9;
 }
 
 .image-section {
