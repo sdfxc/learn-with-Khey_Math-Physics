@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Khmer+OS+Battambang&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Sans+MS&display=swap');
+
+        body {
+            font-family: 'Khmer OS Battambang', sans-serif;
+        }
+
+         /* Apply Comic Sans MS to English text */
+         p:lang(en),
+        h1:lang(en) {
+            font-family: 'Comic Sans MS', sans-serif;
+        }
+        
+        /* Apply Khmer OS Battambang to Khmer text specifically */
+        p:lang/km {
+            font-family: 'Khmer OS Battambang', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 lang="en">Home</h1>
+    <p lang="kh">នេះជាវេបសាយរៀនគណិត-រូបវិទ្យា <p lang="en"> Math-Physics ។</p>
+</body>
+</html>

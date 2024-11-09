@@ -1,0 +1,746 @@
+body {
+    background-color: #795b4e;
+    margin: 0;
+    padding: 0;
+   /* background-image: url('IMG_Screenshot_16-9.jpeg');  Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+    background-position: center; /* Centers the image */
+    color: #e7a3b7;
+}
+
+
+/* Slideshow container */
+.slideshow {
+    position: relative;
+    width: 45vw; /* Full viewport width */
+    height: 70vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+/* Each image slide */
+.image-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 100%; /* Start off-screen to the right */
+    opacity: 0;
+    animation: coverFromRight 15s infinite ease-in-out;
+    transition: all 0.5s ease;
+}
+
+/* Make the image fill the screen while maintaining aspect ratio */
+.image-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire section without stretching */
+    border-radius: 20px; /* Rounded corners for the images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow effect */
+    overflow: hidden;
+}
+
+/* Cover from right slide animation */
+@keyframes coverFromRight {
+    0% {
+        left: 100%; /* Start off-screen on the right */
+        opacity: 0;
+    }
+    10% {
+        left: 0; /* Slide in from the right */
+        opacity: 1; /* Fade in */
+    }
+    40% {
+        left: 0; /* Stay in place */
+        opacity: 1;
+    }
+    50% {
+        left: -100%; /* Move out to the left */
+        opacity: 0; /* Fade out */
+    }
+    100% {
+        left: -100%; /* Stay off-screen on the left */
+        opacity: 0;
+    }
+}
+
+/* Add delay for each image to start after the previous one */
+.image-slide:nth-child(2) {
+    animation-delay: 4s; /* Adjust timing for smooth transitions */
+}
+.image-slide:nth-child(3) {
+    animation-delay: 8s;
+}
+.image-slide:nth-child(4) {
+    animation-delay: 12s;
+}
+.image-slide:nth-child(5) {
+    animation-delay: 16s;
+}
+.image-slide:nth-child(6) {
+    animation-delay: 20s;
+}
+.image-slide:nth-child(7) {
+    animation-delay: 24s;
+}
+.image-slide:nth-child(8) {
+    animation-delay: 28s;
+}
+.image-slide:nth-child(9) {
+    animation-delay: 32s;
+}
+.image-slide:nth-child(10) {
+    animation-delay: 36s;
+}
+
+
+
+
+
+/* Base styles for Khmer language */
+html[lang="km"] {
+    font-family: 'Battambang', 'Koulen', 'Siemreap', 'Moul', 'Bokor', sans-serif;
+}
+
+/* Base styles for English language */
+html[lang="en"] {
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* You can specify more specific selectors if needed */
+body[lang="km"] {
+    font-family: 'Battambang', 'Koulen', 'Siemreap', 'Moul', 'Bokor', sans-serif;
+}
+
+body[lang="en"] {
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+}
+
+
+
+/* Style for the menu icon */
+.menu-icon {
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+}
+.menu-icon:hover{
+    
+    color: rgb(0, 0, 0);  
+    opacity: 0.8;
+    transform: scale(1.3);  
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: pulse 1s infinite;
+}
+
+/* Style for the menu */
+#menu {
+    display: none;
+    position: absolute;
+    top: 100px; /* Adjust based on your header height */
+    right: 20px; /* Position to the right */
+    background-color: #00BCD4; /* Background color for the menu */
+    padding: 10px;
+    width: 120px; /* Adjust the width to make the menu smaller */
+    z-index: 1000;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add a shadow for better visibility */
+    border-radius: 8px; /* Rounded corners for the menu */
+}
+
+
+#menu ul li:hover{
+    background-color: #CAD4C5;  
+    color: rgb(0, 0, 0);  
+    opacity: 0.8;
+    transform: scale(1.03);  
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#menu ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    display: block; /* Make links take full width */
+}
+
+#menu ul li a:hover {
+    background-color: #0097A7;
+    border-radius: 4px;
+    padding: 5px;
+    opacity: 0.8;
+    transform: scale(1.03);  
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+
+/* header style*/
+header {
+    position: sticky;
+    top: 0; /* Stick to the top */
+    left: 0; /* Align to the left */
+    background-color: #00BCD4;
+    color: rgb(255, 255, 255);
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+header .logo img {
+    height: 50px;
+    animation: pulse 2s infinite; /* Apply the bounce animation */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+header .logo img {
+    height: 50px;
+    animation: bounce 2s infinite; /* Apply the bounce animation */
+}
+
+
+/* Define the pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Hover effect for list items */
+header nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    text-align: right;
+}
+
+header nav ul li {
+    display: block; /* Ensure the link takes up the entire space of the list item */
+    /*border-radius: 10px;  Adjust the value for more or less rounding */
+   /* padding: 10px;  Add padding to make the rounded corners more noticeable */
+
+    text-align: left;
+    text-decoration: none;
+    color: #000; /* Adjust the text color as needed */
+    /*background-color: #ddd;*/
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header nav ul li:hover {
+    animation: pulse 1s infinite; /* Apply pulse animation on hover */
+    /* background-color: #CAD4C5;  Change background color on hover */
+    color: #3f2a2a; /* Change text color on hover */
+   /* text-decoration: underline;  Add underline on hover */
+
+}
+
+
+/* Animation for language toggle button */
+#language-toggle {
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+    padding: 3px 15px; /* Add some padding for a better appearance */
+    background-color: #333; /* Optional: add background color */
+    color: white;
+    border-radius: 10px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    border: none; /* Remove border */
+}
+
+#language-toggle:hover {
+    color: #ffeb3b; /* Change text color on hover */
+    transform: scale(1.1); /* Slightly increase the size on hover */
+    background-color: #555; /* Optional: Change background color on hover */
+}
+
+
+
+
+
+.title-section {
+    text-align: center;
+    padding: 20px;
+/* background-color: rgba(255, 255, 255, 0.8);  Slight transparency for the title section background */
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.title-section h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.title-section p {
+    font-size: 1.2em;
+    color: #000000;
+}
+
+
+.image-section {
+    text-align: center;
+    margin: 20px;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+    font-family: "Khmer OS Bokor", Arial, sans-serif; /* Default font for Khmer text */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.hidden {
+    display: none;
+}
+.khmer-muol {
+    font-family: 'Khmer OS Muol Light', serif;
+}
+h1 {
+    font-family: "Khmer OS Muol Light", Arial, sans-serif; /* Special font for specific title */
+}
+.khmer-muol {
+            font-family: 'Khmer OS Muol Light', serif;
+        }
+.title-section h1[data-kh] {
+    font-family: "Khmer OS Muol Light", Arial, sans-serif; /* Applying to the Khmer title */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Khmer OS Battambang", Arial, sans-serif; /* Font for the button text */
+}
+
+button:hover {
+    background-color: #0056b3;
+    animation: pulse 1s infinite;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+/* Search container */
+.search-container {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center;     /* Center items vertically */
+    width: 100%;              /* Full width of the screen */
+    padding: 10px;
+    box-sizing: border-box;  /* Include padding and border in the element's total width and height */
+    
+}
+
+.search-bar {
+    font-family: 'Khmer OS Battambang', sans-serif;
+    width: 100%;              /* Full width of its container */
+    max-width: 600px;         /* Maximum width */
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;  /* Include padding and border in the element's total width */
+   
+}
+
+.search-input:hover {
+    background-color: #CAD4C5;  /* Change background color on hover */
+    color: rgb(0, 0, 0);  /* Change text color on hover */
+    opacity: 0.8;               /* Change opacity on hover */
+    transform: scale(1.0);     /* Slightly scale up the eសlement on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-button {
+    background-color: #a0ced1;
+    color: blue;
+    border: none;
+    padding: 11.5px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+    gap: 8px; /* Space between icon and text */
+}
+
+.search-button i {
+    font-size: 18px; /* Adjust size of the icon */
+}
+
+.search-button:hover {
+    background-color: #eb27ba;
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+    transform: scale(1.03);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+
+.search-container input[type="text"]:focus {
+    outline: 1px solid #a0ced1; /* Keeps the outline black when focused */
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    width: 100%;
+    font-size: 16px;
+    color: #666;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+/* effect image in search result*/
+
+.research-result {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+   
+    overflow: hidden; /* Hide overflow */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    
+}
+
+.slideshow {
+    width: 25%; /* Reduced width for a smaller image */
+    animation: slideAnimation 0s infinite; /* Adjust timing */
+}
+
+
+.image-slide img {
+    
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Maintain aspect ratio */
+    
+}
+.image-slide:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+
+.research-content {
+    width: 35%; /* Adjust width as needed */
+    margin-right: 10px; /* Space between content and images */
+}
+
+.research-content h2 {
+    font-size: 24px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+   
+}
+
+.research-content p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Slide animation */
+@keyframes slideAnimation {
+    0% {
+        transform: translateX(100%); /* Start off-screen to the right */
+        opacity: 0;
+    }
+    10% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Slide off-screen to the left */
+        opacity: 0;
+    }
+}
+
+/* Delay for each slide */
+.image-slide:nth-child(1) { animation-delay: 0s; }
+.image-slide:nth-child(2) { animation-delay: 6s; }
+.image-slide:nth-child(3) { animation-delay: 12s; }
+.image-slide:nth-child(4) { animation-delay: 18s; }
+.image-slide:nth-child(5) { animation-delay: 24s; }
+
+
+
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ensures consistent column width */
+    gap: 20px;
+    padding: 25px;
+   
+}
+
+.centered-link a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6cm; /* 5 cm in pixels */
+    height: 9cm; /* 8 cm in pixels */
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 8px 8px 10px rgba(53, 36, 23, 0.5); /* Brown shadow */
+    background-size: cover; /* Ensure the background image covers the entire area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat;
+}
+
+
+/* Specific background colors for each link */
+#openLink1 {
+    background-image: url('IMG\ Ung.png'); /* Light Red */
+    /*border: 2px solid #dd8282;*/
+}
+#openLink1:hover {
+    background-image: url('IMG\ Ung.png'); /* Darker Red on hover */
+    border: 2px solid rgb(226, 88, 88);
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    animation: pulse 1s infinite;
+}
+
+
+#openLink2 {
+    background-image: url('IMG_Screenshot_16-9.jpeg'); /* Blue */
+    /*border: 2px solid #278fd4;*/
+}
+#openLink2:hover {
+    background-image: url('IMG_Screenshot_16-9.jpeg'); /* Darker Red on hover */
+    border: 2px solid #0562a0;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    animation: pulse 1s infinite;
+}
+
+
+#openLink3 {
+    background-color: #2ecc71; /* Green */
+    /*border: 2px solid #1ac963;*/
+}
+#openLink3:hover {
+    background-color: #0ca54c; /* Darker Red on hover */
+    border: 2px solid #079140;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    animation: pulse 1s infinite;
+}
+
+#openLink4 {
+    background-color: #f1c40f; /* Yellow */
+    /*border: 2px solid #ddb30c;*/
+}
+#openLink4:hover {
+    background-color: #d4ab03; /* Darker Red on hover */
+    border: 2px solid #af8d03;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    animation: pulse 1s infinite;
+}
+
+#openLink5 {
+    background-color: #0ff187; /* Yellow */
+    /*border: 2px solid #ddb30c;*/
+}
+#openLink5:hover {
+    background-color: #11cc75; /* Darker Red on hover */
+    border: 2px solid #11cc75;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    animation: pulse 1s infinite;
+}
+
+#openLink6 {
+    background-color: #0ff1e6; /* Yellow */
+    /*border: 2px solid #ddb30c;*/
+}
+#openLink6:hover {
+    background-color: #11d8ce; /* Darker Red on hover */
+    border: 2px solid #11d8ce;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    animation: pulse 1s infinite;
+}
+
+.centered-link a:hover {
+    opacity: 0.8; /* Slight transparency on hover */
+    transform: scale(1); /* Slightly increase size on hover */
+}
+
+
+
+/* About section */
+.about-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.about-me {
+    border: 2px solid #000; /* Adds a solid black border */
+    padding: 10px;          /* Adds some padding inside the border */
+    margin-bottom: 10px;    /* Adds space between the paragraphs */
+    border-radius: 8px;     /* Makes the corners of the border rounded */
+    width: 40%;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 300px;
+}
+
+
+/*footer*/
+
+footer {
+    background-color: #44fff6d8;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-info {
+    font-size: 16px;
+    color: #434ff8; /* Change this to your desired color */
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    margin-left: 10px;
+}
+
+.social-icons {
+    
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    font-size: 24px;
+    color: #9e6351;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #000;
+    animation: bounces 2s infinite; /* Apply the bounce animation */
+}
+
+.copyright {
+    color: #db2882; /* Change this to your desired color */
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.copyright i {
+    margin-right: 5px;
+}
+@keyframes bounces {
+    0%, 20%, 50%, 80% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+

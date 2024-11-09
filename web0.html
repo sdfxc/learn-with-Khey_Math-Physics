@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="kh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>learn-with-Khey_Math-Physics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Khmer+OS+Battambang:wght@400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&family=Moul&family=Battambang&family=Nokora&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+
+    <link rel="stylesheet" href="web0.css">
+   
+</head>
+
+<body>
+    
+    <header>
+       
+        <div class="logo">
+            <img src="IMG_3658.png" alt="Logo">
+        </div>
+    
+        <nav>
+            <ul>
+                <li><a href="about.html" data-en="By Kheng Khey" data-kh="និស្សិតរូបវិទ្យា ខេង ខី">និស្សិតរូបវិទ្យា ខេង ខី</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="about.html" data-en="By Kheng Khey" data-kh="និស្សិតរូបវិទ្យា ខេង ខី">និស្សិតរូបវិទ្យា ខេង ខី</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="about.html" data-en="By Kheng Khey" data-kh="និស្សិតរូបវិទ្យា ខេង ខី">និស្សិតរូបវិទ្យា ខេង ខី</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" id="language-toggle" onclick="toggleLanguage()">English</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    
+        <nav id="menu" class="hidden">
+            <ul>
+                <li><a href="home.html" ><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                <li><a href="about.html" ><i class="fa fa-info-circle" aria-hidden="true"></i> About</a></li>
+                <li><a href="service.html" ><i class="fa fa-wrench" aria-hidden="true"></i> Services</a></li>
+                <li><a href="contact.html" ><i class="fa fa-address-book" aria-hidden="true"></i> Contact</a></li>
+                
+                
+            </ul>
+        </nav>
+    
+    
+        
+    </header>
+    <main>
+        <section class="title-section">
+            <h1 class="khmer-muol"data-en="Study Math-Physics" data-kh="សិក្សាគណិតវិទ្យា-រូបវិទ្យា">សិក្សាគណិតវិទ្យា-រូបវិទ្យា</h1>
+            <p data-en="Welcome to the Education and Learning Program ... by Kheng Khey, Bachelor of Physics" data-kh="សូមស្វាគមន៍មកកាន់កម្មវិធីអប់រំនិងការសិក្សា...ដោយនិស្សិតខេង ខី បរិញ្ញាបត្ររូបវិទ្យា">សូមស្វាគមន៍មកកាន់កម្មវិធីអប់រំនិងការសិក្សា...ដោយនិស្សិតខេង ខី បរិញ្ញាបត្ររូបវិទ្យា</p>
+
+
+            <div class="about-image">
+                <img src="IMG_3568.JPG" alt="About Image">
+            </div>
+
+            
+            <div class="search-container">
+            
+                <input type="text" id="searchInput" placeholder="ស្វែងរកសៀវភៅ និងឯកសារបន្ថែម..." data-en="Search for Books and Additional Documents..." data-kh="ស្វែងរកសៀវភៅ និងឯកសារបន្ថែម..." class="search-input">
+               
+                <button class="search-button" onclick="search()" data-en="Search" data-kh="ស្វែងរក">
+                    <i class="fa fa-search"></i> <!-- Font Awesome search icon -->
+                    <span class="button-text">ស្វែងរក</span> <!-- Text for the button -->
+                </button>
+                
+            </div>
+            
+           
+                  
+        </section>
+
+        <section class="grid-container">
+
+            <div class="centered-link">
+                <a  class="khmer-muol"href="web_textbook.html" id="openLink1" data-en="" data-kh=""></a>
+            </div>
+            <div class="centered-link">
+                <a  class="khmer-muol"href="web_teacher_guide.html" id="openLink2" data-en="Teacher Guide Book" data-kh="សៀវភៅណែនាំគ្រូ">សៀវភៅណែនាំគ្រូ</a>
+            </div>
+            <div class="centered-link">
+                <a  class="khmer-muol"href="web_exercise.html" id="openLink3" data-en="Exercises" data-kh="លំហាត់">លំហាត់</a>
+            </div>  
+            <div class="centered-link">
+                <a  class="khmer-muol"href="web_homework.html" id="openLink4" data-en="Homeworks" data-kh="កិច្ចការផ្ទះ">កិច្ចការផ្ទះ</a>
+            </div>
+               
+           
+        </section>
+
+ <main>
+     <section class="title-section">        
+        <div class="research-result">
+            <div class="research-content">
+                <h2>Research Title</h2>
+                <p>Summary or explanation of the research results goes here.</p>
+            </div>
+            <div class="slideshow">
+                <div class="image-slide">
+                    <img src="IMG_3363.jpg" alt="Slide 1">
+                </div>
+                <div class="image-slide">
+                    <img src="IMG_3294.JPG" alt="Slide 2">
+                </div>
+                <div class="image-slide">
+                    <img src="IMG_3462.jpg" alt="Slide 3">
+                </div>
+                
+                    
+                
+                
+            </div>
+        </div>
+</section>
+        <!-- Add more slides as needed -->
+    <!--
+        <div class="slideshow">
+            <div class="image-slide">
+                <img src="IMG_3294.JPG" alt="Slide 1">
+            </div>
+            <div class="image-slide">
+                <img src="IMG_3363.jpg" alt="Slide 2">
+            </div>
+            <div class="image-slide">
+                <img src="IMG_3462.jpg" alt="Slide 3">
+            </div>
+            <div class="image-slide">
+                <img src="IMG_3462ab.png" alt="Slide 4">
+            </div>
+            <div class="image-slide">
+                <img src="IMG_3658s.jpg" alt="Slide 5">
+            </div>
+            <div class="image-slide">
+                <img src="IMG_Screenshot_16-9.jpeg" alt="Slide 6">
+            </div>
+            <div class="image-slide">
+                <img src="IMGScreenshot_1.jpeg" alt="Slide 7">
+            </div>
+            <div class="image-slide">
+                <img src="IMG_3363.jpg" alt="Slide 8">
+            </div>
+            <div class="image-slide">
+                <img src="IMG_3462.jpg" alt="Slide 9">
+            </div>
+            <div class="image-slide">
+                <img src="IMG_3294.JPG" alt="Slide 10">
+            </div>
+        </div>
+        
+    -->
+        
+    </main>
+    <script src="web.js"></script>
+
+    <div class="about-section">
+        <div class="about-me">
+            <p>About me!</p>
+            <p>My name is Kheng Khey. I'm 23 years old</p>
+        </div>
+        <div class="about-image">
+            <img src="IMG_3568.JPG" alt="About Image">
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="contact-info">
+            <i class="fas fa-phone"></i>
+            <span>Contact me: +855 887340233</span>
+        </div>
+    
+        <div class="social-icons">
+            <a href="https://web.facebook.com/KHEnG.KhEy835" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://t.me/KHENG_kHz" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.tiktok.com/@stevejob08?_t=8pzg2MNaBz6&_r=1" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="https://khengkhey835@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+            
+        </div>
+    
+        <div class="copyright">
+            <i class="fas fa-chart-line"></i>
+            <span>@copyright 2024 public by Kheng Khey</span>
+        </div>
+    </footer>
+    
+</body>
+</html>
