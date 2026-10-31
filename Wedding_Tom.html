@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>លិខិតអញ្ជើញអាពាហ៍ពិពាហ៍ - ភត្រា & តុំ</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Khmer -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Moul&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            100: '#fdf8e6',
+                            300: '#f3e3a4',
+                            500: '#d4af37',
+                            600: '#b89628',
+                            700: '#8c7019',
+                        },
+                        khmerred: '#8b0000',
+                    },
+                    fontFamily: {
+                        moul: ['Moul', 'serif'],
+                        battambang: ['Battambang', 'sans-serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Battambang', sans-serif;
+            background-color: #faf7f2;
+            color: #333;
+        }
+        .font-moul {
+            font-family: 'Moul', serif;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#d4af37 0.75px, transparent 0.75px), radial-gradient(#d4af37 0.75px, #faf7f2 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            background-opacity: 0.15;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #b89628 0%, #e6ca65 50%, #997819 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-image: linear-gradient(to bottom right, #d4af37, #fff6cc, #b89628) 1;
+        }
+        /* Custom Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+        .pulse-slow {
+            animation: pulse 3s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        /* Scroll Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-pattern min-h-screen relative overflow-x-hidden">
+
+    <!-- Audio Player Toggle -->
+    <div class="fixed top-5 right-5 z-50">
+        <button id="musicToggle" onclick="toggleAudio()" class="w-12 h-12 bg-white/90 backdrop-blur border-2 border-gold-500 rounded-full flex items-center justify-center shadow-lg text-gold-600 hover:bg-gold-500 hover:text-white transition-all">
+            <i id="musicIcon" class="fas font-solid fa-music animate-spin" style="animation-duration: 4s;"></i>
+        </button>
+    </div>
+
+    <!-- Main Container -->
+    <div class="max-w-3xl mx-auto px-4 py-8 md:py-12">
+        
+        <!-- Outer Card Frame -->
+        <div class="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border-4 border-gold-300 p-6 md:p-12 relative overflow-hidden">
+            
+            <!-- Corner Decorative Elements (Kbach style) -->
+            <div class="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-gold-500 rounded-tl-xl m-2"></div>
+            <div class="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-gold-500 rounded-tr-xl m-2"></div>
+            <div class="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-gold-500 rounded-bl-xl m-2"></div>
+            <div class="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-gold-500 rounded-br-xl m-2"></div>
+
+            <!-- Header Section -->
+            <div class="text-center space-y-4 animate-fade-in">
+                <div class="text-gold-600 font-moul text-sm md:text-base tracking-widest">
+                    សិរីសួស្ដី ជ័យមង្គល វិបុលសុខ
+                </div>
+                <div class="text-2xl md:text-3xl font-moul gold-gradient-text py-2">
+                    សិរីសួស្ដីអាពាហ៍ពិពាហ៍
+                </div>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent mx-auto"></div>
+            </div>
+
+            <!-- Couple Photo Frame Section (បន្ទាប់ពី សិរីសួស្ដីអាពាហ៍ពិពាហ៍) -->
+            <div class="my-8 reveal text-center">
+                <div class="relative inline-block p-2 bg-gradient-to-tr from-gold-500 via-gold-300 to-gold-600 rounded-2xl shadow-xl max-w-sm mx-auto">
+                    <div class="bg-white rounded-xl p-2 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop" 
+                             alt="រូបថតកូនកំលោះ និងកូនក្រមុំ" 
+                             onerror="this.src='https://placehold.co/600x400/fdf8e6/b89628?text=Wedding+Photo';"
+                             class="w-full h-64 md:h-72 object-cover rounded-lg transform hover:scale-105 transition duration-500">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Invitation Text Header -->
+            <div class="text-center my-8 space-y-3 text-gray-700 reveal">
+                <p class="text-base md:text-lg">យើងខ្ញុំមានកិត្តិយសសូមគោរពអញ្ជើញ</p>
+                <div class="inline-block border-b-2 border-dashed border-gold-400 px-8 py-1">
+                    <p class="font-moul text-gold-700 text-lg md:text-xl">ឯកឧត្ដម លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា</p>
+                </div>
+                <p class="text-sm md:text-base text-gray-600 max-w-lg mx-auto leading-relaxed pt-2">
+                    ចូលរួមជាអធិបតី និងជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីសួស្ដី ជ័យមង្គល ក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍ កូនប្រុស កូនស្រី របស់យើងខ្ញុំ៖
+                </p>
+            </div>
+
+            <!-- Bride & Groom Names -->
+            <div class="my-10 text-center space-y-6 reveal">
+                <div class="grid grid-cols-1 md:grid-cols-5 items-center gap-4">
+                    
+                    <!-- Groom -->
+                    <div class="md:col-span-2 space-y-2 p-4 rounded-xl bg-gold-100/50 border border-gold-300 shadow-sm">
+                        <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold block">កូនប្រុសនាម</span>
+                        <h2 class="font-moul text-xl md:text-2xl text-gold-700">ឡុញ ភត្រា</h2>
+                    </div>
+
+                    <!-- Heart Symbol -->
+                    <div class="md:col-span-1 flex justify-center">
+                        <div class="w-12 h-12 rounded-full bg-gold-500 text-white flex items-center justify-center shadow-lg pulse-slow">
+                            <i class="fas fa-heart text-xl"></i>
+                        </div>
+                    </div>
+
+                    <!-- Bride -->
+                    <div class="md:col-span-2 space-y-2 p-4 rounded-xl bg-gold-100/50 border border-gold-300 shadow-sm">
+                        <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold block">កូនស្រីនាម</span>
+                        <h2 class="font-moul text-xl md:text-2xl text-gold-700">ខេង តុំ</h2>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Date Section -->
+            <div class="my-10 bg-gradient-to-r from-gold-500 via-gold-600 to-gold-500 text-white rounded-xl p-6 text-center shadow-md reveal">
+                <p class="font-moul text-sm md:text-base mb-2">ដែលនឹងប្រព្រឹត្តទៅនៅ</p>
+                <h3 class="font-moul text-2xl md:text-3xl tracking-wide mb-1">ថ្ងៃសៅរ៍ ១៤រោច ខែកត្ដិក ឆ្នាំច សំរឹទ្ធិស័ក ព.ស. ២៥៧០</h3>
+                <p class="text-lg md:text-xl font-bold mt-2">ត្រូវនឹងថ្ងៃទី ២៨ ខែ វិច្ឆិកា ឆ្នាំ ២០២៦</p>
+            </div>
+
+            <!-- Program & Location Details -->
+            <div class="my-10 space-y-8 reveal">
+                
+                <!-- Location Detail Card -->
+                <div class="bg-gray-50 border border-gold-300 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-gold-100 text-gold-600 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <i class="fas fa-map-marked-alt text-2xl"></i>
+                    </div>
+                    <h4 class="font-moul text-gold-700 text-lg mb-2">ទីកន្លែងរៀបចំកម្មវិធី</h4>
+                    <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+                        ពិសារភោជនីយហារ ស្ថិតនៅ <span class="font-semibold text-gold-700">គេហដ្ឋានខាងស្រី</span><br>
+                        ស្ថិតនៅ ភូមិក្អិន ឃុំចំណាលើ ស្រុកស្ទោង ខេត្តកំពង់ធំ។
+                    </p>
+
+                    <!-- Google Maps Button -->
+                    <a href="https://maps.google.com/?q=Stoung+Kampong+Thom" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center gap-2 mt-4 px-6 py-2.5 bg-gold-600 hover:bg-gold-700 text-white rounded-full transition shadow-md font-semibold text-sm">
+                        <i class="fas fa-location-arrow"></i> មើលទីតាំងលើ Google Maps
+                    </a>
+                </div>
+
+                <!-- Schedule / Agenda -->
+                <div class="bg-white border border-gold-200 rounded-xl p-6">
+                    <h4 class="font-moul text-gold-700 text-lg text-center mb-6">កម្មវិធីសង្ខេប</h4>
+                    
+                    <div class="space-y-4 max-w-md mx-auto">
+                        <div class="flex items-start gap-4 p-3 rounded-lg hover:bg-gold-100/30 transition">
+                            <div class="w-16 font-bold text-gold-700 text-sm py-1 bg-gold-100 rounded text-center">07:00 ព្រឹក</div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800">ពិធីហែរជំនូន (កូនកំលោះ)</h5>
+                                <p class="text-xs text-gray-500">រៀបចំជួបជុំញាតិមិត្តជិតឆ្ងាយដើម្បីហែរជំនូនតាមប្រពៃណី</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-3 rounded-lg hover:bg-gold-100/30 transition">
+                            <div class="w-16 font-bold text-gold-700 text-sm py-1 bg-gold-100 rounded text-center">10:00 ព្រឹក</div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800">ពិធីកាត់សក់ និងសែនព្រេន</h5>
+                                <p class="text-xs text-gray-500">ពិធីពិសិដ្ឋបង្កក់សិរីសួស្ដីដល់គូស្វាមីភរិយាថ្មី</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-3 rounded-lg hover:bg-gold-100/30 transition">
+                            <div class="w-16 font-bold text-gold-700 text-sm py-1 bg-gold-100 rounded text-center">04:30 ល្ងាច</div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800">អញ្ជើញភ្ញៀវពិសាភោជនីយហារ</h5>
+                                <p class="text-xs text-gray-500">ទទួលទានអាហារសមmodest និងសម្តែងការអរគុណដល់ភ្ញៀវកិត្តិយស</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="my-10 text-center reveal">
+                <h4 class="font-moul text-gold-700 text-sm mb-4">រាប់ថយក្រោយឆ្ពោះទៅថ្ងៃមង្គលការ</h4>
+                <div class="grid grid-cols-4 gap-2 max-w-xs mx-auto">
+                    <div class="bg-gold-100 p-2 rounded-lg border border-gold-300">
+                        <span id="days" class="block font-bold text-xl text-gold-700">00</span>
+                        <span class="text-xs text-gray-600">ថ្ងៃ</span>
+                    </div>
+                    <div class="bg-gold-100 p-2 rounded-lg border border-gold-300">
+                        <span id="hours" class="block font-bold text-xl text-gold-700">00</span>
+                        <span class="text-xs text-gray-600">ម៉ោង</span>
+                    </div>
+                    <div class="bg-gold-100 p-2 rounded-lg border border-gold-300">
+                        <span id="minutes" class="block font-bold text-xl text-gold-700">00</span>
+                        <span class="text-xs text-gray-600">នាទី</span>
+                    </div>
+                    <div class="bg-gold-100 p-2 rounded-lg border border-gold-300">
+                        <span id="seconds" class="block font-bold text-xl text-gold-700">00</span>
+                        <span class="text-xs text-gray-600">វិនាទី</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thank You Note -->
+            <div class="text-center border-t border-gold-200 pt-8 mt-8 space-y-2 reveal">
+                <p class="italic text-gray-600 text-sm">
+                    វត្តមានរបស់ ឯកឧត្ដម លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា ជាកិត្តិយសដ៏ខ្ពង់ខ្ពស់បំផុតសម្រាប់គ្រួសារយើងខ្ញុំ!
+                </p>
+                <p class="font-moul text-gold-700 text-base pt-2">សូមអរគុណ!</p>
+            </div>
+
+        </div>
+
+        <!-- Footer Credits -->
+    <div class="text-center text-xs text-gray-400 mt-6">
+        © 2026 ធៀបការឌីជីថល | Digital Wedding Card
+    </div>
+
+</div>
+
+    <!-- Background Audio with Direct Google Drive MP3 & Fallback Mechanism -->
+    <audio id="weddingAudio" preload="auto" loop crossorigin="anonymous">
+        <!-- Google Drive Direct Download MP3 Link -->
+        <source src="https://docs.google.com/uc?export=download&id=11tiizqbEO6nZ0BcJ7v-ODZZiepChIU1A" type="audio/mpeg">
+        បណ្តាញរុករករបស់អ្នកមិនគាំទ្រឯកសារអូឌីយ៉ូនេះទេ។
+    </audio>
+
+    <!-- JavaScript for Music, Countdown and Scroll Animations -->
+    <script>
+        // Bidirectional Scroll Reveal Animation Script (Scroll Down -> Reveal, Scroll Up -> Hide)
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            const windowHeight = window.innerHeight;
+            
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                const elementVisible = 120; // Trigger threshold
+                
+                // If element is within viewport area
+                if (elementTop < windowHeight - elementVisible && elementBottom > 50) {
+                    element.classList.add('active');
+                } else {
+                    // Hide smoothly when scrolling out of view (both top and bottom)
+                    element.classList.remove('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        // Trigger once on initial load
+        window.addEventListener('load', revealOnScroll);
+
+        // Countdown Timer Logic
+        const weddingDate = new Date("November 28, 2026 07:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }
+
+        // Update timer every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Music Toggle & Web Audio Synth Fallback Mechanism
+        let isPlaying = false;
+        const audio = document.getElementById('weddingAudio');
+        const icon = document.getElementById('musicIcon');
+
+        // Web Audio API Fallback Generator (Plays a soothing traditional wedding melody if Google Drive fails completely or offline)
+        let audioCtx = null;
+        let synthInterval = null;
+
+        function playWebAudioFallback() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+
+            // Traditional Khmer wedding style pentatonic notes frequencies (C4, D4, F4, G4, A4)
+            const notes = [261.63, 293.66, 349.23, 392.00, 440.00, 523.25];
+            let index = 0;
+
+            if (synthInterval) clearInterval(synthInterval);
+
+            synthInterval = setInterval(() => {
+                if (!isPlaying) return;
+                try {
+                    const osc = audioCtx.createOscillator();
+                    const gainNode = audioCtx.createGain();
+                    
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(notes[Math.floor(Math.random() * notes.length)], audioCtx.currentTime);
+                    
+                    gainNode.gain.setValueAtTime(0.15, audioCtx.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1.2);
+                    
+                    osc.connect(gainNode);
+                    gainNode.connect(audioCtx.destination);
+                    
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 1.2);
+                } catch(e) {
+                    console.log("Synth error:", e);
+                }
+            }, 400);
+        }
+
+        function stopWebAudioFallback() {
+            if (synthInterval) {
+                clearInterval(synthInterval);
+                synthInterval = null;
+            }
+        }
+
+        // Error handler: Give Google Drive enough time to load, stream and buffer. Only fallback if severe network error occurs.
+        let driveFailed = false;
+        audio.onerror = function() {
+            console.warn("Google Drive audio streaming encountered an issue. Falling back to Web Audio Synth.");
+            driveFailed = true;
+            if (isPlaying) {
+                audio.pause();
+                playWebAudioFallback();
+            }
+        };
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+                stopWebAudioFallback();
+                icon.classList.remove('animate-spin');
+                icon.classList.replace('fa-music', 'fa-volume-mute');
+                isPlaying = false;
+            } else {
+                isPlaying = true;
+                if (driveFailed) {
+                    playWebAudioFallback();
+                    icon.classList.add('animate-spin');
+                    icon.classList.replace('fa-volume-mute', 'fa-music');
+                } else {
+                    // Attempt to play/stream from Google Drive (buffering gracefully if slow)
+                    audio.play().then(() => {
+                        icon.classList.add('animate-spin');
+                        icon.classList.replace('fa-volume-mute', 'fa-music');
+                    }).catch(e => {
+                        console.log("Stream play error or blocked, switching to Web Audio fallback:", e);
+                        driveFailed = true;
+                        playWebAudioFallback();
+                        icon.classList.add('animate-spin');
+                        icon.classList.replace('fa-volume-mute', 'fa-music');
+                    });
+                }
+            }
+        }
+    </script>
+</body>
+</html>
